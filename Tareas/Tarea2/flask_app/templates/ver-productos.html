@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Lista de Productos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ver-productos.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Productos</h1>
+        <table id="lista-productos">
+            <thead>
+                <tr>
+                    <!--<th>ID</th> -->
+                    <th>Tipo</th>
+                    <th>Producto(s)</th>
+                    <th>Región</th>
+                    <th>Comuna</th>
+                    <th>Fotos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in data %}
+                <tr onclick="window.location='/informacion-producto/{{producto.id}}';">
+                    <!-- <td>{{ producto.id }}</td> -->
+                    <td>{{ producto.tipo }}</td>
+                    <td>
+                        <ul>
+                            {% for p in producto.productos %}
+                            <li>{{ p }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>{{ producto.region }}</td>
+                    <td>{{ producto.comuna }}</td>
+                    <td>
+                        {%for p in producto.photos%}
+                            <img src="{{p}}" alt="Imagen" width="120" height="120">
+                        {%endfor%}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="botones2">
+            {% if page > 1 %}
+                <a href="{{ url_for('ver_productos', page=page-1) }}" class="link_button1">Anterior</a>
+            {% endif %}
+            {% if max_page > page %}
+                <a href="{{ url_for('ver_productos', page=page+1) }}" class="link_button1">Siguiente</a>
+            {% endif %}
+        </div>
+        
+    </div>
+    <div class="botones">
+        <a href="{{ url_for('index') }}" class="link_button1">Volver al inicio</a>
+    </div>
+    <!-- <script type="module" src="{{ url_for('static', filename='js/ver-productos.js') }}"></script> -->
+    <!-- <script src="../js/ver-productos.js"></script> -->
+</body>
+</html>

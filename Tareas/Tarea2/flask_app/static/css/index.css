@@ -1,0 +1,86 @@
+:root {
+  --color-borde: #dbdbdb;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../svg/Background1.jpg');
+  background-size: cover;
+}
+
+.container {
+  border: 1px solid var(--color-borde);
+  height: 50%;
+  max-width: 400px;
+  margin: 2% auto;
+  padding: 2rem;
+  padding-top: .5rem;
+  background-color: #ffffff;
+}
+
+.logo {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}
+
+#logo-id {
+  width: 250px;
+  margin: 0 auto;
+}
+
+#bajada {
+  text-align: center;
+  font-size: 20px;
+}
+
+.botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+}
+
+.grupo-botones {
+  display: flex;
+  gap: 10px;
+}
+
+.link_button1 {
+  text-align: center;
+  background-color: #3A68A1;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 2% 5%;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link_button1:hover {
+  background-color: #4479BA;
+  text-decoration: underline;
+}
+
+.flashes {
+  list-style-type: none;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.flashes li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.flashes li.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}

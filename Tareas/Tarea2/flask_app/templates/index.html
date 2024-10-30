@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Menu Principal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+  </head>
+  <body>
+    <div class="container">
+        <div class="logo">
+            <img id="logo-id" src="{{ url_for('static', filename='svg/fruta.svg') }}" alt="Logo de Fruteria">
+            <p id="bajada">¡Empieza tu día con lo mejor en frutas y verduras!</p>
+        </div>
+        <div class="botones">
+          <div class="grupo-botones">
+              <a href="{{ url_for('agregar_producto') }}" class="link_button1">Agregar Producto</a>
+              <a href="{{ url_for('agregar_pedido') }}" class="link_button1">Agregar Pedido</a>
+          </div>
+          <div class="grupo-botones">
+              <a href="{{ url_for('ver_productos') }}" class="link_button1">Ver Productos</a>
+              <a href="{{ url_for('ver_pedidos') }}" class="link_button1">Ver Pedidos</a>
+          </div>
+      </div>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class="flashes">
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
+  </body>
+</html>

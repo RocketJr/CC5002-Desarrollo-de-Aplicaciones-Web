@@ -1,0 +1,68 @@
+:root {
+  --color-borde: #dbdbdb;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../svg/Background2.jpg');
+  background-size: cover;
+}
+
+.container {
+  border: 1px solid var(--color-borde);
+  height: 50%;
+  max-width: 950px;
+  margin: 2% auto;
+  padding: 2rem;
+  padding-top: .5rem;
+  text-align: center;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif
+}
+
+#lista-pedidos {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+#lista-pedidos tbody tr {
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+#lista-pedidos tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+#lista-pedidos th,
+#lista-pedidos td {
+  border: 1px solid var(--color-borde);
+  padding: 8px;
+}
+
+#lista-pedidos th {
+  background-color: #f2f2f2;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.link_button1 {
+  background-color: #3A68A1;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link_button1:hover {
+  background-color: #4479BA;
+  text-decoration: underline;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Información del Pedido</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/informacion-pedido.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Información del Pedido:</h1>
+        <div>
+            <p><strong>Tipo:</strong> Verdura</p>
+            <p><strong>Producto(s):</strong> Espinaca</p>
+            <p><strong>Región:</strong> Región del Biobío</p>
+            <p><strong>Comuna:</strong> Coronel</p>
+            <p><strong>Descripción:</strong> Buena la Espinaca</p>
+            <p><strong>Nombre comprador:</strong> Juan Escobar</p>
+            <p><strong>Email comprador:</strong> jescobar@yahoo.com</p>
+            <p><strong>Número celular comprador:</strong> +5692345678</p>
+        </div>
+        <div class="botones"> 
+            <a href="{{ url_for('index') }}" class="link_button1">Volver al inicio</a>
+        </div>
+    </div>
+</body>
+</html>
