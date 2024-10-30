@@ -1,0 +1,60 @@
+:root {
+  --color-borde: #dbdbdb;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../svg/Background2.jpg');
+  background-size: cover;
+}
+
+.stats-container {
+  border: 1px solid var(--color-borde);
+  height: 50%;
+  max-width: 800px;
+  margin: 2% auto;
+  padding: 2rem;
+  padding-top: .5rem;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.highcharts-figure {
+  margin: 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.highcharts-figure:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.highcharts-description {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.link_button {
+  background-color: #3A68A1;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+  
+.link_button:hover {
+  background-color: #4479BA;
+  text-decoration: underline;
+}

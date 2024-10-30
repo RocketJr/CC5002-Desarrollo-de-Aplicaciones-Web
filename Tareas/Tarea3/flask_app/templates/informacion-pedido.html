@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Información del Pedido</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/informacion-pedido.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Información del Pedido:</h1>
+        <div>
+            <p><strong>Tipo:</strong> {{ data.tipo }}</p>
+            <p><strong>Productos:</strong> {{ ', '.join(data.productos) }}</p>
+            <p><strong>Región:</strong> {{ data.region }}</p>
+            <p><strong>Comuna:</strong> {{ data.comuna }}</p>
+            <p><strong>Descripción:</strong> {{ data.descripcion }}</p>
+            <p><strong>Nombre del Comprador:</strong> {{ data.nombre }}</p>
+            <p><strong>Email del Comprador:</strong> {{ data.email }}</p>
+            <p><strong>Teléfono del Comprador:</strong> {{ data.telefono }}</p>
+        </div>
+        <div class="botones"> 
+            <a href="{{ url_for('index') }}" class="link_button1">Volver al inicio</a>
+        </div>
+    </div>
+</body>
+</html>

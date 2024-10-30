@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Agregar Pedido</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/agregar-pedido.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            {% if errors %}
+                <ul class="error-message">
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <h1>Agregue su Pedido</h1>
+            <form class="formulario" id="producto-form" action="agregar-pedido" method="post" enctype="multipart/form-data">
+                <div id="tipo-producto-input" class="grupo-input">
+                    <label for="tipo-producto">Tipo de producto:</label>
+                    <select id="tipo-producto" name="tipo-producto">
+                        <option value="">Selecciona un tipo</option>
+                        <option value="fruta">Fruta</option>
+                        <option value="verdura">Verdura</option>
+                    </select>
+                </div>
+        
+                <div id="productos-input" class="grupo-input">
+                    <label for="productos">Productos (Selecciona entre 1 y 5 productos):</label>
+                    <select id="productos" name="productos" multiple>
+                    </select>
+                </div>
+
+                <div id="description-input" class="grupo-input">
+                    <label for="area-desc">Descripción:</label>
+                    <textarea id="area-desc" name="area-desc" rows="4" cols="50" placeholder="Ingrese una descripción"></textarea>
+                </div>
+
+                <div id="region-input" class="grupo-input">
+                    <label for="region">Región:</label>
+                    <select id="region" name="region" onchange="cargarComunas()">
+                        <option value="">Selecciona una región</option>
+                    </select>
+                </div>
+        
+                <div id="comuna-input" class="grupo-input">
+                    <label for="comuna">Comuna:</label>
+                    <select id="comuna" name="comuna">
+                        <option value="">Selecciona una comuna</option>
+                    </select>
+                </div>
+
+                <div id="name-input" class="grupo-input">
+                    <label for="name">Nombre comprador:</label>
+                    <input id="name" name="name" type="text" minlength="3" maxlength="80" placeholder="Ingrese su nombre" required>
+                </div>
+
+                <div id="mail-input" class="grupo-input">
+                    <label for="email">Email comprador:</label>
+                    <input id="email" name="email" type="email" maxlength="30" placeholder="Ingrese su email" required>
+                </div>
+
+                <div id="phone-input" class="grupo-input">
+                    <label for="celular">Número celular comprador:</label>
+                    <input id="celular" name="celular" type="tel" maxlength="15" placeholder="Ingrese su número">
+                </div>
+
+                <div class="botones">
+                    <button type="button" id="envio">
+                        Agregar pedido
+                    </button>
+                </div>
+
+                <div id="confirmacion" class="modal" style="display: none;">
+                    <div class="modal-contenido">
+                        <p>¿Confirma el registro de este producto?</p>
+                        <button id="confirmar" type="submit">Sí, confirmo</button>
+                        <button id="cancelar" type="button">No, quiero volver al formulario</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div class="botones2">
+            <a href="{{ url_for('index') }}" class="link_button1">Volver al inicio</a>
+        </div>
+        
+        <!-- <script type="module" src="../js/agregar-pedido.js"></script> -->
+        <!-- <script src="../js/agregar-pedido.js"></script> -->
+        <script type="module" src="{{ url_for('static', filename='js/agregar-pedido.js') }}"></script>
+    </body>
+</html>

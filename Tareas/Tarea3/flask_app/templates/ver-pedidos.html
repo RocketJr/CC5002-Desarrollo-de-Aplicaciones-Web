@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Lista de Pedidos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ver-pedidos.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Pedidos</h1>
+        <table id="lista-pedidos">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Producto(s)</th>
+                    <th>Región</th>
+                    <th>Comuna</th>
+                    <th>Nombre comprador</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pedido in data %}
+                <tr onclick="window.location='/informacion-pedido/{{pedido.id}}';">
+                    <td>{{ pedido.tipo }}</td>
+                    <td>
+                        <ul>
+                            {% for p in pedido.productos %}
+                            <li>{{ p }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>{{ pedido.region }}</td>
+                    <td>{{ pedido.comuna }}</td>
+                    <td>{{ pedido.comprador }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="botones2">
+            {% if page > 1 %}
+                <a href="{{ url_for('ver_pedidos', page=page-1) }}" class="link_button1">Anterior</a>
+            {% endif %}
+            {% if max_page > page %}
+                <a href="{{ url_for('ver_pedidos', page=page+1) }}" class="link_button1">Siguiente</a>
+            {% endif %}
+        </div>
+
+    </div>
+    <div class="botones"> 
+        <a href="{{ url_for('index') }}" class="link_button1">Volver al inicio</a>
+    </div>
+    <!-- <script type="module" src="{{ url_for('static', filename='js/ver-pedidos.js') }}"></script> -->
+    <!-- <script src="../js/ver-pedidos.js"></script> -->
+</body>
+</html>
